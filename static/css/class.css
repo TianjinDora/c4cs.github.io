@@ -1,3 +1,8 @@
+.scale {
+	height: 1em;
+	width: 1em;
+}
+
 .h2 {
 	margin-top: 40px;
 	margin-bottom: 20px;
@@ -7,8 +12,16 @@
 	margin-top: 20px;
 }
 
+.syllabus-section-header {
+  background-color: #ffa;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .staff-table img {
-	width: 100px;
+	width: 125px;
+	border-radius: 10%;
 }
 
 .staff-table td {
@@ -16,6 +29,10 @@
 }
 
 .grade-table {
+	text-align: center;
+}
+
+.grade-table > tbody > tr > th {
 	text-align: center;
 }
 
@@ -65,5 +82,16 @@
 
 .syllabus-homework {
 	height: 100%;
+}
+
+.anchor-icon {
+  position: relative;
+  left: -25px;
+  margin-right: -16px;
+}
+@media only screen and (max-width : 480px) {
+  .anchor-icon {
+    display: none;
+  }
 }
 

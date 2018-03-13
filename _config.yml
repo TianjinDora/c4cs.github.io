@@ -19,8 +19,85 @@ permalink: none
 collections:
   commands:
     output: true
+    permalink: /commands/:title
+  syllabus:
+  updates:
+  lectures:
+    output: true
 
 defaults:
+  - scope:
+      path: "_syllabus/w18"
+    values:
+      category: w18
+  - scope:
+      path: "_lectures/w18"
+    values:
+      category: w18
+  - scope:
+      path: "_updates/w18"
+    values:
+      category: w18
+  - scope:
+      path: "_syllabus/f17"
+    values:
+      category: f17
+  - scope:
+      path: "_lectures/f17"
+    values:
+      category: f17
+  - scope:
+      path: "_updates/f17"
+    values:
+      category: f17
+  - scope:
+      path: "_syllabus/w17"
+    values:
+      category: w17
+  - scope:
+      path: "_lectures/w17"
+    values:
+      category: w17
+  - scope:
+      path: "_updates/w17"
+    values:
+      category: w17
+  - scope:
+      path: "_syllabus/f16"
+    values:
+      category: f16
+  - scope:
+      path: "_lectures/f16"
+    values:
+      category: f16
+  - scope:
+      path: "_updates/f16"
+    values:
+      category: f16
+  - scope:
+      path: "_updates/w16"
+    values:
+      category: w16
+  - scope:
+      type: lectures
+    values:
+      layout: lecture
+  - scope:
+      type: syllabus
+    values:
+      layout: syllabus
+  - scope:
+      path: "_lectures/w18"
+    values:
+      category: w18
+  - scope:
+      path: "_syllabus/w18"
+    values:
+      category: w18
+  - scope:
+      path: "_updates/w18"
+    values:
+      category: w18
   - scope:
       type: commands
     values:
@@ -29,6 +106,10 @@ defaults:
       path: "_commands/basics"
     values:
       category: basics
+  - scope:
+      path: "_commands/tutorials"
+    values:
+      category: tutorials
   - scope:
       path: "_commands/shells"
     values:
@@ -58,11 +139,18 @@ defaults:
     values:
       category: os_x
 
-command_categories: ["basics", "shells", "scripting", "tools", "editors", "toys", "ubuntu", "os_x"]
+command_categories: ["basics", "tutorials", "shells", "scripting", "tools", "editors", "toys", "ubuntu", "os_x"]
 
 # Build settings
 markdown: kramdown
 
+# This is a bit of a hack, since we're using remark, which expects
+# to render markdown itself, we need to prevent jekyll from picking
+# it up and parsing it, however we would still like to use the templating
+# features of jekyll so that we can just write slides alone, in a
+# markdown file. Thus we override the extensions list so that jekyll does
+# not treat .markdown files as markdown.
+markdown_ext: "mkdown,mkdn,mkd,md"
+
 # Needed for Travis
 exclude: [vendor]
-
